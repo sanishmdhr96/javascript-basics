@@ -38,6 +38,6 @@ subject.marks
 
 let colors = null;
 
-console.log('subject', subject)
+// <!-- --> console.log('subject', subject)
 console.log('colors', colors)
 
