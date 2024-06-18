@@ -91,17 +91,113 @@ const array = [
 // console.log('filteredArray', filteredArray)
 
 //4. Destructuring
-const person = {
-    name: 'Sara',
-    age: 25,
-    gender: 'female'
+// const person = {
+//     name: 'Sara',
+//     age: 25,
+//     gender: 'female'
+// }
+
+// let { name: pName, age: pAge, gender: pGen } = person
+
+// console.log(pName)
+// console.log(pAge)
+// console.log(pGen)
+
+/**
+ * 5. Classes
+ * 6. Inheritance
+ */
+
+/**
+ * Classes -> blueprint -> object -> properties -> methods
+ */
+
+// let person = {
+//     name: 'Sanish',
+//     passMarks: 50,
+//     fullMarks: 100,
+//     obtainedMarks: 60,
+//     isPass: function () {
+//         if (this.obtainedMarks > this.passMarks) {
+//             console.log(`${this.name} has passed with ${this.obtainedMarks} marks.`)
+//         } else {
+//             console.log(`${this.name} has failed.`)
+//         }
+//     }
+// }
+// person.isPass()
+
+// let person1 = {
+//     name: 'Manish',
+//     passMarks: 50,
+//     fullMarks: 100,
+//     obtainedMarks: 60,
+//     isPass: function () {
+//         if (this.obtainedMarks > this.passMarks) {
+//             console.log(`${this.name} has passed with ${this.obtainedMarks} marks.`)
+//         } else {
+//             console.log(`${this.name} has failed.`)
+//         }
+//     }
+// }
+// person1.isPass()
+
+class Person {
+    // to initialize the properties of person object
+    constructor(name, email, address) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+    }
+
+    // method to determine if a student has passed or not
+    greet() {
+        console.log(`Hello ${this.name}`);
+    }
 }
 
-let { name: pName, age: pAge, gender: pGen } = person
+class Student extends Person {
+    constructor(name, email, passMarks, fullMarks, obtainedMarks) {
+        super(name, email)
+        this.passMarks = passMarks;
+        this.fullMarks = fullMarks;
+        this.obtainedMarks = obtainedMarks;
+    }
+    isPass() {
+        if (this.obtainedMarks > this.passMarks) {
+            console.log(`${this.name} with email ${this.email} has passed with ${this.obtainedMarks} marks.`)
+        } else {
+            console.log(`${this.name} has failed.`)
+        }
+    }
+}
 
-console.log(pName)
-console.log(pAge)
-console.log(pGen)
+let person1 = new Student('Sanish', 'test@gmail.com', 50, 100, 70)
+
+person1.greet()
+
+
+// let person2 = new Person('Manish', 50, 100, 20)
+// let person3 = new Person('Rnish', 50, 100, 20)
+// let person4 = new Person('snish', 50, 100, 20)
+// let person5 = new Person('11nish', 50, 100, 20)
+// let person6 = new Person('hnish', 50, 100, 20)
+// let person7 = new Person('lnish', 50, 100, 20)
+// let person8 = new Person('0nish', 50, 100, 20)
+
+// person1.isPass()
+// person2.isPass()
+// person3.isPass()
+// person4.isPass()
+// person5.isPass()
+// person6.isPass()
+// person7.isPass()
+// person8.isPass()
+
+
+
+
+
 
 
 
